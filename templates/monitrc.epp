@@ -1,0 +1,24 @@
+## Puppet controlled - do not edit manually
+  set daemon 900
+      with start delay 240
+  set logfile /var/log/monit.log
+
+  set idfile /var/lib/monit/id
+  set statefile /var/lib/monit/state
+
+  set eventqueue
+      basedir /var/lib/monit/events
+      slots 100
+  set mail-format {
+      from: monit@<%= $fqdn %>
+      subject: $SERVICE $EVENT at $DATE
+      message: monit $ACTION $SERVICE at $DATE on $HOST
+      }
+  set mailserver 127.0.0.1
+  set alert root@<%= $fqdn %> but not on { <%= $monit::noalert.join(', ') -%> }
+  set httpd port 2812 <%= $monit::listen -%>
+  <% $monit::allow.each |$allow| { %>
+      allow <%= $allow -%>
+  <%- } %>
+
+  include /etc/monit/conf.d/*

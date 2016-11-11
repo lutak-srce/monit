@@ -1,0 +1,32 @@
+---
+monit::package_manage: true
+monit::package_name: 'monit'
+monit::package_ensure: 'present'
+monit::file_owner: 'root'
+monit::file_group: 'root'
+monit::file_mode: '0644'
+monit::monitrc_mode: '0600'
+monit::monitrc_file: '/etc/monit/monitrc'
+monit::monitrcd_dir: '/etc/monit/monitrc.d/'
+monit::monitconfd_dir: '/etc/monit/conf.d/'
+monit::monitrc_epp: 'monit/monitrc.epp'
+monit::rootbin_file: '/etc/monit/templates/rootbin'
+monit::rootbin_src: 'puppet:///modules/monit/rootbin'
+monit::rootrc_file: '/etc/monit/templates/rootrc'
+monit::rootrc_src: 'puppet:///modules/monit/rootrc'
+monit::rootstrict_file: '/etc/monit/templates/rootstrict'
+monit::rootstrict_src: 'puppet:///modules/monit/rootstrict'
+monit::service_enable: true
+monit::service_ensure: 'running'
+monit::service_manage: true
+monit::service_name: 'monit'
+monit::service_provider: ~
+monit::services_managed: []
+monit::listen: ~ 
+monit::noalert:
+  - 'instance'
+  - 'pid'
+  - 'ppid'
+monit::allow:
+  - 'localhost'
+  - '@sudo read-only'
