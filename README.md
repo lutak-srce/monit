@@ -16,7 +16,7 @@ The monit module installs, configures, and manages the monit service.
 
 ##Module Description
 
-The monit module handles installing, configuring, and running monit for Debian Jessie distribution.
+The monit module handles installing, configuring, and running monit for Debian jessie distribution.
 
 ##Setup
 
@@ -51,7 +51,7 @@ class { '::monit':
 
 ##Limitations
 
-This module has been tested on Debina Jessie, and no issues have been identified.
+This module has been tested on Debian jessie, and no issues have been identified.
 
 ##Development
 
