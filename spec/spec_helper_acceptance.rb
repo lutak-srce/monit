@@ -15,6 +15,8 @@ RSpec.configure do |c|
   # Configure all nodes in nodeset
   c.before :suite do
     hosts.each do |host|
+      # dependency
+      on host, puppet('module','install','puppetlabs-stdlib')
       copy_module_to(host, :source => module_root, :module_name => 'monit')
     end
 
