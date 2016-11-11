@@ -32,7 +32,7 @@ class monit::config  inherits monit {
 
   file { $monit::rootstrict_file:
     ensure => file,
-    source => $monit::rootstricet_src,
+    source => $monit::rootstrict_src,
     owner  => $monit::file_owner,
     group  => $monit::file_group,
     mode   => $monit::file_mode,
