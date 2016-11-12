@@ -120,6 +120,11 @@
 # set mail-format { from: monit@foo.bar }
 #
 #
+  set mail-format {
+      from: monit@<%= $fqdn %>
+      subject: $SERVICE $EVENT at $DATE
+      message: monit $ACTION $SERVICE at $DATE on $HOST
+      }
 ## You can set alert recipients whom will receive alerts if/when a 
 ## service defined in this file has errors. Alerts may be restricted on 
 ## events by using a filter as in the second example below.
