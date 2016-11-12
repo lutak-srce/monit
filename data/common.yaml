@@ -1,5 +1,11 @@
 ---
 monit::package_manage: true
+monit::syslog: false
+monit::mailserver: ~
+monit::alert_recipient: ~
+monit::alert_root: false
+monit::check_interval: 120
+monit::start_delay: ~
 monit::package_name: 'monit'
 monit::package_ensure: 'present'
 monit::file_owner: 'root'
@@ -22,7 +28,7 @@ monit::service_manage: true
 monit::service_name: 'monit'
 monit::service_provider: ~
 monit::services_managed: []
-monit::listen: ~ 
+monit::port: 2812
 monit::noalert:
   - 'instance'
   - 'pid'
