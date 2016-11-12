@@ -23,24 +23,24 @@ describe 'monit', :type => :class do
     end
 
     describe 'monit::package' do
-      let(:params) {{ :package_ensure => 'present', :package_name => ['monit'], :package_manage => true, }}
+      let(:params) {{ :package_ensure => 'present', :package_name => 'monit', :package_manage => true, }}
 
       it { should contain_package('monit').with(
         :ensure => 'present'
       )}
 
       describe 'should allow package ensure to be overridden' do
-        let(:params) {{ :package_ensure => 'latest', :package_name => ['monit'], :package_manage => true, }}
+        let(:params) {{ :package_ensure => 'latest', :package_name => 'monit', :package_manage => true, }}
         it { should contain_package('monit').with_ensure('latest') }
       end
 
       describe 'should allow the package name to be overridden' do
-        let(:params) {{ :package_ensure => 'present', :package_name => ['blah'], :package_manage => true, }}
+        let(:params) {{ :package_ensure => 'present', :package_name => 'blah', :package_manage => true, }}
         it { should contain_package('blah') }
       end
 
       describe 'should allow the package to be unmanaged' do
-        let(:params) {{ :package_manage => false, :package_name => ['monit'], }}
+        let(:params) {{ :package_manage => false, :package_name => 'monit', }}
         it { should_not contain_package('monit') }
       end
     end
