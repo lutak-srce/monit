@@ -4,7 +4,7 @@ class monit (
   String               $package_name,
   Stdlib::Absolutepath $monitrc_file,
   Stdlib::Absolutepath $monitrcd_dir,
-  Stdlib::Absolutepath $monitconfd_dir,
+  Stdlib::Absolutepath $confd_dir,
   Stdlib::Absolutepath $rootbin_file,
   Stdlib::Absolutepath $rootrc_file,
   Stdlib::Absolutepath $rootstrict_file,

@@ -1,6 +1,6 @@
 class monit::config  inherits monit {
 
-  file { $monit::monitconfd_dir:
+  file { $monit::confd_dir:
     ensure  => directory,
     recurse => true,
     purge   => true,

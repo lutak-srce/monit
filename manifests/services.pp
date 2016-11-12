@@ -8,7 +8,7 @@ define monit::services {
     mode    => $monit::file_mode,
   }
 
-  file { "${monit::monitconfd_dir}${title}":
+  file { "${monit::confd_dir}${title}":
     ensure => link,
     target => "${monit::monitrcd_dir}${title}",
   }
