@@ -1,10 +1,10 @@
 ---
 monit::package_manage: true
-monit::syslog: false
-monit::mailserver: ~
+monit::syslog: true
+monit::mailserver: 'localhost'
 monit::alert_recipient: ~
-monit::alert_root: false
-monit::check_interval: 120
+monit::alert_root: true
+monit::check_interval: 900
 monit::start_delay: ~
 monit::package_name: 'monit'
 monit::package_ensure: 'present'
