@@ -31,6 +31,8 @@ class monit (
   String               $service_name,
   Optional[String]     $service_provider,
   Array[String]        $services_managed,
+  Optional[Integer]    $apache_port,
+  Optional[String]     $apache_ip,
 ) {
 
     contain monit::package

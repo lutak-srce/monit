@@ -29,6 +29,8 @@ monit::service_name: 'monit'
 monit::service_provider: ~
 monit::services_managed: []
 monit::port: 2812
+monit::apache_port: ~
+monit::apache_ip: ~
 monit::noalert:
   - 'instance'
   - 'pid'

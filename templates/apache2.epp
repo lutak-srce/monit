@@ -1,7 +1,7 @@
 check process apache2 with pidfile "/var/run/apache2/apache2.pid"
         start program = "/etc/init.d/apache2 start"
         stop program = "/etc/init.d/apache2 stop"
-        if failed host 127.0.0.1 port 80 protocol http
+        if failed host <% if $monit::apache_ip {-%> <%= $monit::apache_ip -%> <% } else {-%> 127.0.0.1<% } %> port <% if $monit::apache_port {-%> <%= $monit::apache_port -%> <% } else {-%> 80<% } %> protocol http
                 with timeout 15 seconds
                 then restart
         if children > 250 then restart
